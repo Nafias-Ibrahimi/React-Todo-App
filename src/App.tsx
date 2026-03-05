@@ -26,7 +26,17 @@ function App() {
         placeholder='enter your text'
       />
       <button onClick={addTodo}>Save</button>
-    </>
+
+    <h1>Display ToDo</h1>
+<ul>
+  {todos.map(task => (
+    <li key={task.id}>{task.text}
+    <button onClick={() => setTodos(t => t.id !== task.id)}>Delete</button>
+    
+    </li>
+  ))}
+</ul>
+</>
   )
 }
 
